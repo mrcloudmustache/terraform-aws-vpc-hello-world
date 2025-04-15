@@ -1,15 +1,7 @@
-variable "cidr_block" {
-    description = "The network and prefix of the vpc"
+variable "region"  {
+    description = "The name of the AWS region"
     type = string
-    # default = "10.0.0.0/16"
-  
-}
-
-variable "vpc_name" {
-    description = "The name of the vpc"
-    type = string
-    # default = "aws-vpc-hello-world"
-  
+    default = "us-east-1"
 }
 
 variable "environment" {
@@ -24,9 +16,28 @@ variable "environment" {
   
 }
 
-variable "region"  {
-    description = "The name of the AWS region"
-    type = string
-    # default = "us-east-1"
-  
+variable "project" {
+  description = "The name of the project"
+  type        = string
 }
+
+variable "cidr_block" {
+  description = "The vpc ip address space"
+}
+
+variable "name" {
+  description = "The name of the resource being created"
+  type        = string
+}
+
+variable "create_natgw" {
+  description = "Create the nat gateway defaults to false"
+  type        = bool
+  default     = false
+}
+
+# variable "public_key_path" {
+#   description = "Path to the local SSH public key file"
+#   type        = string
+#   default     = "~/.ssh/id_rsa.pub" # Replace with your actual public key path
+# }
